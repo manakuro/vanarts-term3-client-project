@@ -1,5 +1,8 @@
 <?php
 
+// Include PHP libraries
+require 'vendor/autoload.php';
+
 // Include config file
 include('partials/config.php');
 

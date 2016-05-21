@@ -1,0 +1,14 @@
+{
+    "name": "kuromana_air/wwm",
+    "authors": [
+        {
+            "name": "manakuro",
+            "email": "a7108100@gmail.com"
+        }
+    ],
+    "require": {
+        "catfan/Medoo": "^1.0",
+        "monolog/monolog": "^1.19",
+        "phpmailer/phpmailer": "^5.2"
+    }
+}
