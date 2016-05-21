@@ -1,0 +1,230 @@
+$max-width: 1120px;
+$column-s-padding: 1rem;
+$column-m-padding: 1.5rem;
+
+.row {
+    position: relative;
+    margin: 0 auto;
+
+    &:before, &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+
+    .row {
+        width: auto;
+        margin: 0 -1.5rem;
+    }
+
+    // Desktop XL
+    @include respond-to(ll) {
+        max-width: $max-width;
+    }
+
+}
+
+.columns,
+.column {
+    position: relative;
+    float: left;
+    padding: 0 $column-s-padding;
+
+    // Tablet
+    // @include respond-to(m) {
+    //     padding: 0 $column-m-padding;
+    // }
+
+}
+
+.row-center {
+    text-align: center;
+    .columns {
+        display: inline-block;
+        letter-spacing: 0;
+        vertical-align: top;
+        float: none;
+    }
+
+    &.va-middle {
+        .columns {
+            vertical-align: middle;
+        }
+    }
+
+    &.va-bottom {
+        .columns {
+            vertical-align: bottom;
+        }
+    }
+
+    &.va-middle {
+        .columns {
+            vertical-align: middle;
+        }
+    }
+
+    &.va-bottom {
+        .columns {
+            vertical-align: bottom;
+        }
+    }
+
+}
+
+// Mobile
+.check-device {
+    display: none;
+    width: 1px;
+}
+@for $i from 1 through 12 {
+    
+    .span-#{$i} {
+        width: (100% / 12) * $i
+    }
+    .push-#{$i} {
+        left: (100% / 12) * $i
+    }
+    .pull-#{$i} {
+        right: (100% / 12) * $i
+    }
+
+    .offset-#{$i} {
+        margin-left: (100% / 12) * $i
+    }
+
+}
+.mobile-1 {
+    width: 50%;
+}
+
+.mobile-2 {
+    width: 100%;
+}
+
+// Tablet
+@include respond-to(m) {
+
+    .check-device {
+        display: none;
+        width: 2px;
+    }
+
+    @for $i from 1 through 12 {
+        
+        .span-m-#{$i} {
+            width: (100% / 12) * $i
+        }
+        .push-m-#{$i} {
+            left: (100% / 12) * $i
+        }
+        .pull-m-#{$i} {
+            right: (100% / 12) * $i
+        }
+
+        .offset-m-#{$i} {
+            margin-left: (100% / 12) * $i
+        }
+    }
+
+    @for $i from 1 through 6 {
+        
+        .medium-#{$i} {
+            width: (100% / 6) * $i
+        }
+        .medium-push-#{$i} {
+            left: (100% / 6) * $i
+        }
+        .medium-pull-#{$i} {
+            right: (100% / 6) * $i
+        }
+
+        .medium-offset-#{$i} {
+            margin-left: (100% / 6) * $i
+        }
+    }
+
+}
+
+// Desktop
+@include respond-to(l) {
+
+    .check-device {
+        display: none;
+        width: 3px;
+    }
+
+    @for $i from 1 through 12 {
+        
+        .span-l-#{$i} {
+            width: (100% / 12) * $i
+        }
+        .push-l-#{$i} {
+            left: (100% / 12) * $i
+        }
+        .pull-l-#{$i} {
+            right: (100% / 12) * $i
+        }
+
+        .offset-l-#{$i} {
+            margin-left: (100% / 12) * $i
+        }
+    }
+
+}
+
+// Desktop LL
+@include respond-to(ll) {
+
+    .check-device {
+        display: none;
+        width: 4px;
+    }
+
+    @for $i from 1 through 12 {
+        
+        .span-ll-#{$i} {
+            width: (100% / 12) * $i
+        }
+        .push-ll-#{$i} {
+            left: (100% / 12) * $i
+        }
+        .pull-ll-#{$i} {
+            right: (100% / 12) * $i
+        }
+
+        .offset-ll-#{$i} {
+            margin-left: (100% / 12) * $i
+        }
+    }
+    
+}
+
+// Desktop XL
+@include respond-to(xl) {
+
+    .check-device {
+        display: none;
+        width: 5px;
+    }
+
+    @for $i from 1 through 12 {
+        
+        .span-xl-#{$i} {
+            width: (100% / 12) * $i
+        }
+        .push-xl-#{$i} {
+            left: (100% / 12) * $i
+        }
+        .pull-xl-#{$i} {
+            right: (100% / 12) * $i
+        }
+
+        .offset-xl-#{$i} {
+            margin-left: (100% / 12) * $i
+        }
+    }
+
+}

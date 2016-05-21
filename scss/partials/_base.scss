@@ -1,0 +1,106 @@
+*,*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+ul,li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+
+/*img {
+    width: 100%;
+}*/
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    border: none;
+    background: none;
+    user-select: none;
+    outline: none;
+    tap-highlight-color: rgba(0,0,0,0);
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/*---------------------------
+    Fonts
+---------------------------*/
+$base-font: 62.5%;
+html {
+    font-family: $main-font;
+    font-size: $base-font;
+    line-height: 1.5;
+
+    // Tablet
+    @include respond-to(m) {
+        font-size: 120%;
+    }
+
+    // Desktop
+    @include respond-to(l) {
+        font-size: 120%;
+    }
+
+    // Desktop xl
+    // @include respond-to(ll) {
+    //     font-size: 120%;
+    // }
+}
