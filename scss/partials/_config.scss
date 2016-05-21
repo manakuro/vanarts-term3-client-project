@@ -1,0 +1,58 @@
+/*---------------------------
+    Color Theme
+---------------------------*/
+$white: #fff;
+$black: #2F2F2F;
+$light-black: rgb(191, 189, 189);
+$green: #A3EB97;
+$light-green: #68C4AF;
+$light-grey: #EFEDED;
+$pink: rgba(255,192,203, 1);
+
+// background
+
+
+/*---------------------------
+    Fonts
+---------------------------*/
+$main-font: 'Oswald', Calibri;
+$heading-font: 'Pacifico';
+
+/*---------------------------
+    MEDIA QUERY
+---------------------------*/
+@import 'partials/_mediaquery.scss';
+
+
+/*---------------------------
+    Grid System
+---------------------------*/
+@import 'partials/_grid.scss';
+
+
+/*---------------------------
+    Utilities
+---------------------------*/
+
+// hack for preventing the height of window from being resizing on mobile and table.
+@mixin prevent-resize($selectors:()) {
+    $len: length($selectors);
+    $transition: "";
+
+    @for $i from 1 through $len {
+        @if $i == 1 {
+            $transition: #{nth($selectors, $i)} 100000000s ease
+        } @else {
+            $transition: $transition, #{nth($selectors, $i)} 100000000s ease
+        }
+    }
+    // @debug $transition;
+
+    @include respond-to(s-m) {
+        transition: $transition;
+    }
+
+    @include respond-to(m-l) {
+        transition: $transition;
+    }
+}

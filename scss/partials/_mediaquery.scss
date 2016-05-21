@@ -1,0 +1,55 @@
+$bp-m: 48em;    // tablet  / 1em = 16px, 48em = 768px
+$bp-l: 55em;    // desktop / 1em = 16px, 55em = 880px
+$bp-ll: 70em;   // desktop / 1em = 16px, 70em = 1120px
+$bp-xl: 80em;   // desktop / 1em = 16px, 80em = 1280px
+
+@mixin respond-to($media) {
+    @if $media == s {
+        @media only screen and (max-width: $bp-m) { @content; }
+    } @else if $media == m {
+        @media only screen and (min-width: $bp-m) { @content; }
+    } @else if $media == l {
+        @media only screen and (min-width: $bp-l) { @content; }
+    } @else if $media == ll {
+        @media only screen and (min-width: $bp-ll) { @content; }
+    } @else if $media == xl {
+        @media only screen and (min-width: $bp-xl) { @content; }
+    }
+
+    @if $media == s-m {
+        @media only screen and (max-width: $bp-m) { @content; }
+    }
+
+    @if $media == m-l {
+        @media only screen and (min-width: $bp-m) and (max-width: $bp-l) { @content; }
+    } @else if $media == l-xl {
+        @media only screen and (min-width: $bp-l) { @content; }
+    }
+}
+
+// Mobile
+@include respond-to(s) {
+
+    /* hide for mobile */
+    .mobile-hide {
+        display: none !important;
+    }
+}
+
+// Table
+@include respond-to(m-l) {
+
+    /* hide for tablet */
+    .medium-hide {
+        display: none !important;
+    }
+}
+
+// Desktop 
+@include respond-to(l-xl) {
+
+    /* hide for desktop */
+    .large-hide {
+        display: none !important;
+    }
+}

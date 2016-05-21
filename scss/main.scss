@@ -1,0 +1,256 @@
+ /*--------------------------
+        BASE
+----------------------------*/
+@import 'partials/_config.scss';
+@import 'partials/_base.scss';
+
+
+
+
+/* --------------------------
+        LAYOUT
+----------------------------*/
+// Modules will scale with document
+.page-header {
+    font-size: 1rem;
+}
+
+.hero-area {
+    font-size: 1rem;
+}
+
+.form {
+    font-size: 1rem;
+
+    // Desktop L
+    @include respond-to(l) {
+        font-size: .8rem;
+    }
+
+}
+
+/* --------------------------
+        HEADER
+----------------------------*/
+.page-header {
+}
+
+/* --------------------------
+        HERO SECTION
+----------------------------*/
+
+/*---------------------------
+    SECTION
+---------------------------*/
+
+
+/*---------------------------
+    FOOTER SECTION
+---------------------------*/
+.page-footer {
+}
+
+/*-- Social Link --*/
+.social {
+
+    li {
+        display: inline-block;
+        margin-right: 1rem;
+
+        a {
+            color: $white;
+            font-size: 0;
+
+            .fa {
+                font-size: 1rem;
+            }
+            transition: all .5s;
+        }
+
+        // a:hover {
+        //     color: $white;
+        // }
+    }
+}
+
+/* --------------------------
+        MODULES
+----------------------------*/
+
+/*-- Section --*/
+.section {
+    padding: 2rem 0 2rem 0;
+
+    // Tablet
+    // @include respond-to(m) {
+    //     padding: 4rem 0 4rem 0;
+    // }
+
+    // Desktop XL
+    // @include respond-to(xl) {
+    //     padding: 6rem 0;
+    // }
+
+}
+// .section-title {
+//     margin-bottom: .5rem;
+//     font-size: 3rem;
+//     color: $white;
+//     font-family: $heading-font;
+// }
+
+/*-- Form --*/
+.form {
+
+    .input-wrapper {
+        margin: 1em 0;
+        padding: 1em 0;
+
+        &.checkbox {
+
+            .input-label {
+                margin-right: 1rem;
+            }
+
+        }
+    }
+
+    .input {
+        width: 100%;
+        height: 1.5em;
+        border: 2px solid #EEE9E9;
+        border-radius: 5px;
+        font-size: 1.3em;
+        transition: border-color .25s;
+    }
+
+    .input:hover {
+        border-color: $green;
+    }
+
+    .input-left {
+        text-align: left;
+    }
+
+    /* select */
+    .select {
+        border: 2px solid #EEE9E9;
+        border-radius: 5px;
+    }
+
+    /* label */
+    .label-span {
+        font-size: 2em;
+        font-weight: 500;
+        display: block;
+        margin: 5px;
+        text-align: left;
+
+    }
+
+    .input-label {
+        margin: 2em 0;
+    }
+
+    /* textarea */
+    .textarea {
+        height: 9em;
+
+    }
+
+}
+
+/* button */
+.btn {
+    display: block;
+    width: 10rem;
+    padding: .5em;
+    font-weight: 500;
+    font-size: 1.3em;
+    color: $white;
+    background-color: $green;
+    border: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+    transition: border-color .5s;
+
+}
+
+.btn:hover {
+    border-color: $green;
+}
+    
+
+/*-- Layout --*/
+.hidden {
+    display: none !important;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/*-- Icon Animation --*/
+.icon-btn {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+
+    svg {
+        left: 0;
+    }
+}
+
+/* --------------------------
+        STATES
+----------------------------*/
+
+
+
+
+
+/*---------------------------
+    ANIMATION
+---------------------------*/
+@import 'partials/_animation.scss';
+
+/* --------------------------
+        Print
+----------------------------*/
+@import 'partials/_print.scss';
+
+/* --------------------------
+        NO USE
+----------------------------*/
