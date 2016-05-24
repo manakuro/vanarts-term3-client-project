@@ -1,19 +1,15 @@
 <?php include('bootstrap.php'); ?>
 <?php 
+    // set namespace
+    use WWM\Utility;
+
     session_start();
 
-    // Create navigation html
-    $navHTML = '';
-    foreach($config['nav'] as $val) {
-        // if ($val['only_member'] && empty($_SESSION['auth'])) continue;
-        $navHTML .= '<li><a href="'. $val['href'] .'">'. $val['name'] .'</a></li>';
-    }
+    // create navigation menu html
+    $navHTML = Utility::getNav($config['nav']);
 
-    // Create social media sectio html
-    $socialHTML = '';
-    foreach($config['social_media'] as $val) {
-        $socialHTML .= '<li><a href="'. $val['href'] .'"><i class="'. $val['class']  .'"></i>'. $val['name'] .'</a></li>';
-    }
+    // create social media html
+    $socialHTML = Utility::getSocialLink($config['social_media']);
 
 ?>
 
@@ -30,54 +26,84 @@
         <!-- Place favicon.ico in the root directory -->
 
         <!-- CSS -->
-        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,100italic,100|Lato:400,300,300italic|Dancing+Script:400,700' rel='stylesheet' type='text/css'>        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/normalize.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,100italic,100|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/libs/normalize.css">
+        <link rel="stylesheet" href="css/libs/video-js.min.css">
         <link rel="stylesheet" href="css/main.min.css">
 
-        <!-- Fancybox -->
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
-        <script src="js/vendor/jquery.mousewheel-3.0.6.pack.js"></script>
-        <link href="js/source/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
-        <script src="js/source/jquery.fancybox.js" type="text/javascript"></script>
-        <script src="js/source/jquery.fancybox.pack.js" type="text/javascript"></script>
-        <link href="js/source/helpers/jquery.fancybox-buttons.css" rel="stylesheet" type="text/css"/>
-        <script src="js/source/helpers/jquery.fancybox-buttons.js" type="text/javascript"></script>
-        <script src="js/source/helpers/jquery.fancybox-media.js" type="text/javascript"></script>
-        <link href="js/source/helpers/jquery.fancybox-thumbs.css" rel="stylesheet" type="text/css"/>
-        <script src="js/source/helpers/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-        
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <!-- header -->
         <header class="page-header">
             
-            <div class="row">
+            <div class="row header-inner">
             
-                <div class="span-3 columns">
+                <div class="span-l-2 columns">
                     <div class="logo">
                         <a href="index.php"><img src="img/logo.png"></a>
                     </div>
                 </div>
 
-                <div class="span-9 columns">
+                <div class="span-l-3 columns offset-4">
                     
-                    <nav class="nav">
-                        
-                        <ul>
-                            <?php echo $navHTML; ?>
-                        </ul>
+                    <ul class="social"><?php echo $socialHTML; ?></ul>
 
-                    </nav>
+                </div>
+
+                <div class="span-l-3 columns">
+                    
+                    <div class="form newsletter-form-header">
+
+                        <input type="text" name="" value="" class="input newsletter-input" placeholder="subscribe newsletter">
+                        <button type="submit" class="btn newsletter-btn">Submit</button>
+
+                    </div>
 
                 </div>
 
             </div>
 
+            <div class="nav-wrapper">
+                
+                <div class="row">
+
+                    <div class="span-l-9 columns">
+                        
+                        <nav class="nav">
+                            
+                            <ul class="nav-list"><?php echo $navHTML; ?></ul>
+
+                        </nav>
+
+                    </div>
+
+                    <div class="span-l-3 columns">
+                        
+                        <form action="serach.php" method="get" accept-charset="utf-8" class="form">
+
+                            <div class="page-header-searchbar">
+                                
+                                <input type="text" class="search-input" name="search" value="" placeholder="Search for...">
+
+                                <i class="fa fa-search search-icon" aria-hidden="true"></i>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
         </header>
+        <!-- /header -->
        
 
         

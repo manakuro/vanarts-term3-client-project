@@ -3,9 +3,7 @@
 ----------------------------*/
 @import 'partials/_config.scss';
 @import 'partials/_base.scss';
-
-
-
+@import 'partials/module.scss';
 
 /* --------------------------
         LAYOUT
@@ -23,215 +21,560 @@
     font-size: 1rem;
 
     // Desktop L
-    @include respond-to(l) {
-        font-size: .8rem;
-    }
+    // @include respond-to(l) {
+    //     font-size: .8rem;
+    // }
 
 }
 
 /* --------------------------
         HEADER
 ----------------------------*/
+// Common Setting
+$page-header-top-space: 2rem;
+$nav-inner-space: 1rem;
 .page-header {
+
+    font-family: $heading-font;
+
+    .header-inner {
+        padding-top: $page-header-top-space;
+    }
+
+    // Social Section
+    .social {
+        @extend .social;
+    }
+
+    // Newsletter Form
+    .newsletter-form-header {
+        @extend .newsletter-form;
+    }
+
+    // Navigation Menu
+    .nav-wrapper {
+        background: $black;
+    }
+
+    .nav-wrapper {
+        margin-top: 1rem;
+    }
+
+    .nav-list {
+        display: flex;
+    }
+
+    .nav-item {
+        flex: 1 1 auto;
+
+        a {
+            display: block;
+            padding: $nav-inner-space;
+            text-align: center;
+            text-transform: uppercase;
+            color: $white;
+
+            @include hover(background);
+        }
+
+    }
+
+    .parent-list {
+        position: relative;
+
+        &:hover > .sub-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .sub-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        min-width: 10rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: $black;
+        z-index: 999;
+
+        visibility: hidden;
+        opacity: 0;
+
+        transition: all .25s;
+
+        .nav-item {
+            border-bottom: 1px solid $white;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        a {
+            text-align: left;
+            padding: .5rem;
+        }
+
+    }
+
+    .nav-indicator {
+        position: absolute;
+        color: $white;
+        font-size: 1rem;
+        right: 5%;
+        top: 50%;
+        margin-top: -.5rem;
+    }
+
+    // Search Bar
+    .page-header-searchbar {
+        position: relative;
+        margin-top: $nav-inner-space;
+    }
+
+    .search-input {
+        width: 100%;
+        border-bottom: 1px solid $white;
+        background: none;
+
+        color: $white;
+        @include focus-input();
+    }
+
+    .search-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1rem;
+        color: $white;
+    }
+
+
 }
 
 /* --------------------------
-        HERO SECTION
+    BREAKING NEWS SECTION
 ----------------------------*/
+.sec-bk-news {
+    margin-top: 2rem;
+
+    .sec-bk-news-heading {
+        float: left;
+        font-size: 1rem;
+    }
+
+    .sec-bk-news-inner {
+        background: $white;
+        position: relative;
+    }
+
+    .sec-bk-news-content-wrapper {
+        float: left;
+        padding: .5rem 1rem;
+    }
+
+    // Icon
+    .bk-news-icon {
+        display: block;
+        position: absolute;
+        top: 50%;
+        margin-top: -.5rem;
+        font-size: 0;
+        width: 1rem;
+        height: 1rem;
+
+        background-repeat: no-repeat;
+
+        &.bk-news-next-icon {
+            right: 2%;
+            background: url('../img/home/bk-news-next-icon.png');
+        }
+
+        &.bk-news-prev-icon {
+            right: 5%;
+            background: url('../img/home/bk-news-prev-icon.png');
+        }
+    }
+
+}
 
 /*---------------------------
-    SECTION
+    TOP NEWS SECTION
 ---------------------------*/
+.sec-top-news {
+    font-family: $heading-font;
 
+    .sec-top-news-heading {
+        font-size: 1.3rem;
+    }
+
+    // News List
+    .sec-top-news-list {
+        @extend .sec-news-list;
+    }
+
+    .sec-top-news-list-headline-wrapper {
+        @extend .sec-news-list-headline-wrapper;
+        height: 160px;
+    }
+
+    .sec-top-news-list-bottom {
+        @extend .sec-news-list-bottom;
+    }
+
+    .sec-top-news-list-headline {
+        @extend .sec-news-list-headline;
+    }
+
+    .sec-top-news-list-date {
+        @extend .sec-news-list-date;
+    }
+}
+
+
+/*---------------------------
+    HOME VIDEOS SECTION
+---------------------------*/
+.sec-home-videos {
+    background: $white;
+
+    // Top Video
+    .sec-home-videos-top {
+        width: 66.66667% - pxToPercent(786, 15);
+        padding: 0 0 0 $column-padding;
+    }
+
+    // Video List
+    .sec-home-videos-list-wrapper {
+        padding: 0;
+
+        overflow: scroll;
+        height: 57vh;
+    }
+
+    .sec-home-videos-list {
+        padding: 1rem 0;
+
+        -webkit-transition: all .5s;
+                transition: all .5s;
+
+        a {
+            color: $black;
+
+        -webkit-transition: all .5s;
+                transition: all .5s;
+
+        }
+
+        &:hover {
+            background-color: rgba($main-colour, .5);
+        }
+
+        &:hover > a {
+            color: $white;
+        }
+    }
+
+    .sec-home-videos-list-img-wrapper {
+        width: 30%;
+        float: left;
+        padding-left: $column-padding;
+    }
+
+    .sec-home-videos-list-headline-wrapper {
+        width: 70%;
+        padding-left: 1rem;
+        float: left;
+    }
+
+    .sec-home-videos-list-headline {
+        font-size: .9rem;
+        font-weight: 500;
+        font-family: $heading-font;
+    }
+
+}
+
+/*---------------------------
+    HOME CHARTS
+---------------------------*/
+@mixin playing-style {
+    background: $main-colour;
+    border: .1em solid $main-colour;
+}
+.sec-home-charts {
+    background: $white;
+    font-family: $heading-font;
+
+    // list
+    .sec-home-charts-list {
+        margin-top: 1rem;
+
+        &:last-child {
+            margin-bottom: 1rem;
+        }
+
+    }
+
+    // ranks
+    .sec-home-charts-list-ranks-wrapper {
+        text-align: center;
+        margin-top: 3rem;
+    }
+
+    // img
+    .sec-home-charts-list-img-wrapper {
+        position: relative;
+        padding: 0;
+
+        .sec-home-charts-list-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 1.5rem;
+            color: $white;
+            margin-left: -1.5rem;
+            margin-top: -1.5rem;
+            border-radius: 100%;
+            border: .1em solid $white;
+            width: 3rem;
+            height: 3rem;
+            background: rgba(43,51,63,.7);
+
+            -webkit-transition: background .25s, border .25s;
+                    transition: background .25s, border .25s;
+
+            // button style while playing
+            &:before {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -7px;
+                margin-top: -12px;
+            }
+
+            // button style while pausing
+            &.fa-pause:before {
+                margin-left: -10px;
+                margin-top: -12px;   
+            }
+        }
+
+        &:hover .sec-home-charts-list-play {
+            @include playing-style;
+        }
+
+        img {
+            -webkit-transition: opacity .25s;
+                    transition: opacity .25s;
+        }
+
+        &:hover img {
+            opacity: .8;
+        }
+
+        // while playing 
+        &.playing {
+
+            .sec-home-charts-list-play {
+                @include playing-style;
+            }
+
+            img {
+                opacity: .8;
+            }
+
+        }
+
+    }
+
+    // name of singer
+    .sec-home-charts-list-singer {
+        font-size: 1rem;
+    }
+
+    // title
+    .sec-home-charts-list-title {
+        font-size: 1.3rem;
+    }
+
+    // social media link
+    .sec-home-charts-social {
+        opacity: 0;
+
+        -webkit-transition: all .25s;
+                transition: all .25s;
+    }
+    .social {
+        @extend .social;
+
+    }
+
+    .sec-home-charts-list:hover .sec-home-charts-social{
+        opacity: 1;
+    }
+
+}
+
+/*---------------------------
+    FEATURES SECTION
+---------------------------*/
+.sec-home-features {
+
+    // news list
+    .sec-home-features-list {
+        @extend .sec-news-list;
+
+        &:nth-child(-n+4) {
+            margin-top: 0;
+        }
+
+    }
+
+    // headline wrapper
+    .sec-home-features-list-headline-wrapper {
+        @extend .sec-news-list-headline-wrapper;
+
+        height: 200px;
+    }
+
+    // headline
+    .sec-home-features-list-headline {
+        @extend .sec-news-list-headline;   
+    }
+
+    .sec-home-features-list-bottom {
+        @extend .sec-news-list-bottom;
+    }
+
+    // date
+    .sec-home-features-list-date {
+        @extend .sec-news-list-date;
+    }
+
+}
+
+
+/*---------------------------
+    SIDEBAR SECTION
+---------------------------*/
+.sidebar {
+    .sec-heading-sidebar {
+        @include btn-style(6rem);
+        font-size: 1.3rem;
+    }
+
+    // popular
+    .sec-popular {
+        background: $white;
+        margin-top: 2rem;
+
+        font-family: $heading-font;
+
+        a {
+            @include hover(color);
+        }
+    }
+
+    .sec-popular-list-inner {
+        padding: 1rem;
+    }
+
+    .sec-popular-list-heading {
+        font-size: 1rem;
+        margin-top: .3rem;
+        text-transform: uppercase;
+        color: $light-blue;
+    }    
+
+    .sec-popular-list-headline {
+        font-size: .8rem;
+    }
+
+}
 
 /*---------------------------
     FOOTER SECTION
 ---------------------------*/
 .page-footer {
-}
+    padding: 2rem;
+    background: $black;
+    position: relative;
 
-/*-- Social Link --*/
-.social {
+    // logo
+    .logo {
+        padding: 0 $column-padding;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 
-    li {
-        display: inline-block;
-        margin-right: 1rem;
+    // introduction of website
+    .page-footer-intor-wrapper {
+        margin-top: 3rem;
+        color: $white;
+    }
+
+    .page-footer-title {
+        font-family: $heading-font;
+        font-size: 1.3rem;
+        color: $main-colour;
+        text-transform: uppercase;
+
+        margin-bottom: 1rem;
+    }
+
+    .page-footer-copyright {
+        margin-top: 1rem;
+    }
+
+    .page-footer-nav {
+
+        a {
+            font-family: $heading-font;
+            color: $white;
+            text-transform: uppercase;
+            font-size: 1rem;
+
+            @include hover(color);
+        }
+
+    }
+
+    // social media link
+    .social {
+        margin-top: 1rem;
+        text-align: left;
+
+        li {
+            display: inline-block;
+            margin: 0 1rem 0 0;
+        }
 
         a {
             color: $white;
             font-size: 0;
 
             .fa {
-                font-size: 1rem;
-            }
-            transition: all .5s;
-        }
-
-        // a:hover {
-        //     color: $white;
-        // }
-    }
-}
-
-/* --------------------------
-        MODULES
-----------------------------*/
-
-/*-- Section --*/
-.section {
-    padding: 2rem 0 2rem 0;
-
-    // Tablet
-    // @include respond-to(m) {
-    //     padding: 4rem 0 4rem 0;
-    // }
-
-    // Desktop XL
-    // @include respond-to(xl) {
-    //     padding: 6rem 0;
-    // }
-
-}
-// .section-title {
-//     margin-bottom: .5rem;
-//     font-size: 3rem;
-//     color: $white;
-//     font-family: $heading-font;
-// }
-
-/*-- Form --*/
-.form {
-
-    .input-wrapper {
-        margin: 1em 0;
-        padding: 1em 0;
-
-        &.checkbox {
-
-            .input-label {
-                margin-right: 1rem;
+                font-size: 1.5rem;
             }
 
+            @include hover(color);
         }
+        
     }
 
-    .input {
-        width: 100%;
-        height: 1.5em;
-        border: 2px solid #EEE9E9;
-        border-radius: 5px;
-        font-size: 1.3em;
-        transition: border-color .25s;
-    }
-
-    .input:hover {
-        border-color: $green;
-    }
-
-    .input-left {
-        text-align: left;
-    }
-
-    /* select */
-    .select {
-        border: 2px solid #EEE9E9;
-        border-radius: 5px;
-    }
-
-    /* label */
-    .label-span {
-        font-size: 2em;
-        font-weight: 500;
-        display: block;
-        margin: 5px;
-        text-align: left;
-
-    }
-
-    .input-label {
-        margin: 2em 0;
-    }
-
-    /* textarea */
-    .textarea {
-        height: 9em;
+    // newsletter
+    .newsletter-form-footer {
+        margin-top: 1rem;
+        @extend .newsletter-form;
 
     }
 
 }
 
-/* button */
-.btn {
-    display: block;
-    width: 10rem;
-    padding: .5em;
-    font-weight: 500;
-    font-size: 1.3em;
-    color: $white;
-    background-color: $green;
-    border: none;
-    border-radius: 3px;
-    text-transform: uppercase;
-    transition: border-color .5s;
-
-}
-
-.btn:hover {
-    border-color: $green;
-}
-    
-
-/*-- Layout --*/
-.hidden {
-    display: none !important;
-}
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
-.cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.cf:after {
-    clear: both;
-}
-
-/*-- Icon Animation --*/
-.icon-btn {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-
-    svg {
-        left: 0;
-    }
-}
 
 /* --------------------------
         STATES
@@ -252,5 +595,52 @@
 @import 'partials/_print.scss';
 
 /* --------------------------
-        NO USE
+        extend video.js
 ----------------------------*/
+@import 'videojs.scss';
+
+
+// // audio
+// .audio-wrapper {
+//     margin-top: .5rem;
+// }
+
+// .audiojs {
+//     width: 100%;
+//     height: 2.3rem;
+//     background: none;
+//     background-image: none;
+//     font-size: .8rem;
+//     font-family: $heading-font;
+//     box-shadow: none;
+
+//     .play-pause {
+//         display: none;
+//     }
+
+//     .scrubber {
+//         border: none;
+//         background-color: $ex-light-grey;
+//     }
+
+//     .time {
+//         border: none;
+//         color: $black;
+//         text-shadow: none;
+
+//         em {
+//             color: $black;
+//             text-shadow: none;
+//         }
+
+//     }
+
+//     .played {
+//         border: none;
+//         color: $black;
+//         text-shadow: none;
+//     }
+
+// }
+
+

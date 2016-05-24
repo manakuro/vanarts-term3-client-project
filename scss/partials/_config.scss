@@ -1,40 +1,50 @@
 /*---------------------------
     Color Theme
 ---------------------------*/
+// basic colour
 $white: #fff;
-$black: #2F2F2F;
+$black: #252525;
 $light-black: rgb(191, 189, 189);
 $green: #A3EB97;
 $light-green: #68C4AF;
-$light-grey: #EFEDED;
+// $light-grey: #EFEDED;
+$light-grey: #6B6868;
+$ex-light-grey: rgba(235, 235, 235, .5);
 $pink: rgba(255,192,203, 1);
+$light-blue: #0099ff;
 
-// background
+// background colour
+$main-bg: #ebebeb;
+
+// primary colour
+$main-colour: #e51228;
+$tag-colour: #ffff00;
+
+
 
 
 /*---------------------------
     Fonts
 ---------------------------*/
-$main-font: 'Oswald', Calibri;
-$heading-font: 'Pacifico';
+$body-font: 'Roboto', 'Lato';
+$heading-font: 'Oswald', Calibri;
 
 /*---------------------------
     MEDIA QUERY
 ---------------------------*/
-@import 'partials/_mediaquery.scss';
+@import '_mediaquery.scss';
 
 
 /*---------------------------
     Grid System
 ---------------------------*/
-@import 'partials/_grid.scss';
+@import '_grid.scss';
 
 
 /*---------------------------
     Utilities
 ---------------------------*/
-
-// hack for preventing the height of window from being resizing on mobile and table.
+// hack for preventing the height of window from being resizing on mobile and tablet.
 @mixin prevent-resize($selectors:()) {
     $len: length($selectors);
     $transition: "";
@@ -56,3 +66,12 @@ $heading-font: 'Pacifico';
         transition: $transition;
     }
 }
+
+@function pxToPercent( $parentPxWidth, $pxWidth ){
+    @return floor((( $pxWidth / $parentPxWidth ) * 10000% )) / 100;
+}
+
+
+
+
+

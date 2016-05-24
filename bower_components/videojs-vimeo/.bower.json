@@ -1,0 +1,23 @@
+{
+  "name": "videojs-vimeo",
+  "version": "2.0.0",
+  "main": [
+    "src/Vimeo.js"
+  ],
+  "description": "Allows you to use Vimeo URL as source with Video.js.",
+  "license": "MIT",
+  "dependencies": {
+    "video.js": "^5.0.0"
+  },
+  "homepage": "https://github.com/eXon/videojs-vimeo",
+  "_release": "2.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.0",
+    "commit": "0c39f7913a8996931de2fc42b79263222592d372"
+  },
+  "_source": "https://github.com/eXon/videojs-vimeo.git",
+  "_target": "^2.0.0",
+  "_originalSource": "videojs-vimeo",
+  "_direct": true
+}

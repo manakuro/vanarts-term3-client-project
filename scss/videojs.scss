@@ -1,0 +1,50 @@
+.video-js {
+
+    width: 100%;
+    height: 17vw;
+
+    .vjs-big-play-button {
+        font-size: 3em;
+        height: 3em;
+        width: 3em;
+
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -1.5em;
+        margin-left: -1.5em;
+
+        padding: 0;
+        cursor: pointer;
+        opacity: 1;
+        border: .15em solid $white;
+        border-radius: 100%;
+        background-color: none;
+        background-color: rgba(43, 51, 63, 0.7);
+
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s; 
+
+        &:before {
+            content: "\f101";
+            font-size: 2em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -.65em;
+            margin-top: -.4em;
+            display: block;
+        }
+    }
+
+    &.vjs-has-started {
+
+        .vjs-big-play-button {
+            display: none;
+        }
+
+    }
+}

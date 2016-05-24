@@ -11,6 +11,7 @@
 
 a {
     text-decoration: none;
+    color: $black;
 }
 
 p {
@@ -26,11 +27,12 @@ ul,li {
 h1,h2,h3,h4,h5,h6 {
     margin: 0;
     padding: 0;
+    font-weight: 500;
 }
 
-/*img {
+img {
     width: 100%;
-}*/
+}
 
 hr {
     display: block;
@@ -59,6 +61,7 @@ fieldset {
 input {
     -webkit-appearance: none;
     border-radius: 0;
+    border: none;
 }
 
 textarea {
@@ -83,24 +86,21 @@ button {
 /*---------------------------
     Fonts
 ---------------------------*/
-$base-font: 62.5%;
+$base-font-size: 62.5%;
 html {
-    font-family: $main-font;
-    font-size: $base-font;
+    font-family: $body-font;
+    font-size: $base-font-size;
     line-height: 1.5;
+    background: $main-bg;
 
     // Tablet
-    @include respond-to(m) {
-        font-size: 120%;
-    }
+    // @include respond-to(m) {
+    //     font-size: 100%;
+    // }
 
     // Desktop
     @include respond-to(l) {
-        font-size: 120%;
+        font-size: 100%;
     }
 
-    // Desktop xl
-    // @include respond-to(ll) {
-    //     font-size: 120%;
-    // }
 }

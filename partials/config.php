@@ -3,7 +3,7 @@
 $config = array(
 
     // Title
-    'title' => 'Biz Coach Plus',
+    'title' => 'WWM',
 
     // Meta
     'meta' => array(
@@ -13,36 +13,91 @@ $config = array(
     // Navigation
     'nav' => array(
 
-        'products' => array(
-            'name' => 'products',
-            'href' => 'products.php',
-            'only_member' => false
+        'news' => array(
+            'name' => 'News',
+            'href' => 'news.php',
+            'class' => 'parent-list',
+
+            'sub_menu' => array(
+                'hip_hop' => array(
+                    'name' => 'Hip Hop',
+                    'class' => '',
+                    'href' => 'news.php?genre=hip_hop',
+                ),
+                'rb' => array(
+                    'name' => 'R&B',
+                    'class' => '',
+                    'href' => 'news.php?genre=rb',
+                ),
+                'pop' => array(
+                    'name' => 'Pop',
+                    'class' => '',
+                    'href' => 'news.php?genre=pop',
+                ),
+                'rock' => array(
+                    'name' => 'Rock',
+                    'class' => '',
+                    'href' => 'news.php?genre=rock',
+                ),
+                'punk' => array(
+                    'name' => 'Punk',
+                    'class' => '',
+                    'href' => 'news.php?genre=punk',
+                ),
+                'reggae' => array(
+                    'name' => 'Reggae',
+                    'class' => '',
+                    'href' => 'news.php?genre=reggae',
+                ),
+                'dance' => array(
+                    'name' => 'Dance',
+                    'class' => '',
+                    'href' => 'news.php?genre=dance',
+                )
+            )
         ),
-        'testimonials' => array(
-            'name' => 'testimonials',
-            'href' => 'testimonials.php',
-            'only_member' => false
+        'hot_songs' => array(
+            'name' => 'Hot Songs',
+            'class' => '',
+            'href' => 'hot_songs.php',
+            'sub_menu' => array()
         ),
-        'sign_up' => array(
-            'name' => 'sign up',
-            'href' => 'signup.php',
-            'only_member' => false
+        'charts' => array(
+            'name' => 'Charts',
+            'class' => '',
+            'href' => 'charts.php',
+            'sub_menu' => array()
         ),
-        'log_in' => array(
-            'name' => 'log in',
-            'href' => 'login.php',
-            'only_member' => false
+        'features' => array(
+            'name' => 'Features',
+            'class' => '',
+            'href' => 'features.php',
+            'sub_menu' => array()
         ),
-        'contact' => array(
-            'name' => 'Contact',
-            'href' => 'contact.php',
-            'only_member' => false
+        'reviews' => array(
+            'name' => 'reviews',
+            'class' => '',
+            'href' => 'reviews.php',
+            'sub_menu' => array()
         ),
-        'resource' => array(
-            'name' => 'resource',
-            'href' => 'resources.php',
-            'only_member' => true
+        'videos' => array(
+            'name' => 'videos',
+            'class' => '',
+            'href' => 'videos.php',
+            'sub_menu' => array()
         ),
+        'events' => array(
+            'name' => 'events',
+            'class' => '',
+            'href' => 'events.php',
+            'sub_menu' => array()
+        ),
+        'interviews' => array(
+            'name' => 'interviews',
+            'class' => '',
+            'href' => 'interviews.php',
+            'sub_menu' => array()
+        )
 
     ),
 
@@ -77,96 +132,34 @@ $config = array(
 
     // Home
     'home' => array(
-
-        // Home / Introduction
-        'intro' => array(
-            'coaching' => array(
-                'img' => 'img/home/intro/coaching.png',
-                'alt' => 'Image of coaching products',
-                'caption' => 'coaching',
-                'class' => 'first-row'
-            ),
-            'self_development' => array(
-                'img' => 'img/home/intro/self_development.png',
-                'alt' => 'Image of self development products',
-                'caption' => 'self development',
-                'class' => 'first-row'
-            ),
-            'presentation' => array(
-                'img' => 'img/home/intro/presentation.png',
-                'alt' => 'Image of presentation products',
-                'caption' => 'presentation',
-                'class' => ''
-            ),
-            'communicate' => array(
-                'img' => 'img/home/intro/communicate.png',
-                'alt' => 'Image of communicate products',
-                'caption'=> 'communicate',
-                'class' => ''
-            )
-        ),
-
-        'instructors' => array(
-
-            array(
-                'img' => 'img/home/instructors/instructor_1.jpg',
-                'alt' => 'Image of instructor',
-                'class' => ''
-            ),
-            array(
-                'img' => 'img/home/instructors/instructor_2.jpg',
-                'alt' => 'Image of instructor',
-                'class' => ''
-            ),
-            array(
-                'img' => 'img/home/instructors/instructor_3.jpg',
-                'alt' => 'Image of instructor',
-                'class' => ''
-            ),
-            array(
-                'img' => 'img/home/instructors/instructor_4.jpg',
-                'alt' => 'Image of instructor',
-                'class' => ''
-            ),
-            array(
-                'img' => 'img/home/instructors/instructor_5.jpg',
-                'alt' => 'Image of instructor',
-                'class' => ''
-            ),
-            array(
-                'img' => 'img/home/instructors/instructor_6.jpg',
-                'alt' => 'Image of instructor',
-                'class' => ''
-            )
-        )
-
-    ),
-
-    // Testimonials
-    'testimonials' => array(
-        1 => array(
-            'img' => 'img/rockies.jpg',
-            'alt' => 'Image of Rockies in Canada',
-            'location' => 'Rockies',
-            'fee' => '$169'
-        )
-
     ),
 
     // Footer
     'footer' => array(
-        'featured_products' => array(
+        'categories' => array(
             array(
-                'name' => 'Working with Coaching Tips'
+                'name' => 'hiphop'
             ),
             array(
-                'name' => 'Coaching and Mentoring Your Team'
+                'name' => 'r&b'
             ),
             array(
-                'name' => 'Learning from Failure'
+                'name' => 'pop'
             ),
             array(
-                'name' => 'Organizaion Communication Fundamentals'
+                'name' => 'rock'
+            ),
+            array(
+                'name' => 'punk'
+            ),
+            array(
+                'name' => 'reggae'
+            ),
+            array(
+                'name' => 'reviews'
+            ),
+            array(
+                'name' => 'news'
             )
 
         )
