@@ -1,5 +1,43 @@
 $(function(){
 
+    // Audio
+    $('.js-play-audio').click(function(e){
+        e.preventDefault();
+
+        var $target = $(e.target),
+            $parent = $target.parents('.js-play-audio'),
+            $icon = $parent.find('.js-audio-icon');
+
+        if ($parent.hasClass('playing')) {
+            $parent.removeClass('playing');
+            $icon.addClass('fa-play');
+            $icon.removeClass('fa-pause');
+        
+        } else {
+            $parent.addClass('playing');
+            $icon.addClass('fa-pause');
+            $icon.removeClass('fa-play');
+        }
+        
+        // adjust icon positioning
+        
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+/*---------------------------
+    Utility
+---------------------------*/
+
     /**
      * Get a random integer between `min` and `max`.
      * 
@@ -11,49 +49,21 @@ $(function(){
       return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    var max = 4;
-
-    // Home / Gallery section
-    var gallerySecImg = $('.gallery-section-img');
-    if (gallerySecImg.length > 0) {
-        setInterval(function(){
-            var num = getRandomInt(1, max);
-            gallerySecImg
-                .find('img')
-                .fadeOut(2000, function(){
-                    $(this).attr('src', 'img/galleries/gallery-' + num + '.jpg');
-                })
-                .fadeIn(2000);
-        }, 4000);
-    }
 
     // Gallery fancybox
-    var fbox = $('.fbox');
+    // var fbox = $('.fbox');
 
-    if(fbox.length !== 0) {
+    // if(fbox.length !== 0) {
 
-        fbox.fancybox({
-            scrolling: 'no',
-            prevEffect      : 'none',
-            nextEffect      : 'none',
-            helpers     : {
-                title   : { type : 'over' },
-            }
-        });
+    //     fbox.fancybox({
+    //         scrolling: 'no',
+    //         prevEffect      : 'none',
+    //         nextEffect      : 'none',
+    //         helpers     : {
+    //             title   : { type : 'over' },
+    //         }
+    //     });
 
-    }
-
-    // Hover effect
-    $('.gallery-img').on("mouseover", function(){
-
-        $('.gallery-img').not($(this)).css("opacity", "0.5");
-
-    }).on("mouseout", function(){
-
-        $('.gallery-img').each(function(){
-            $(this).css("opacity", "1"); 
-        });
-
-    });
+    // }
 
 });

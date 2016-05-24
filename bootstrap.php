@@ -1,15 +1,15 @@
 <?php
 
-// Include PHP libraries
+// include PHP libraries
 require 'vendor/autoload.php';
 
-// Include config file
+// include config file
 include('partials/config.php');
 
-// Define curernt page
+// define curernt page
 define('CURRENT_PAGE', pathinfo($_SERVER['REQUEST_URI'], PATHINFO_FILENAME));
 
-// Define host url
+// define host url
 $url  = empty($_SERVER["HTTPS"]) ? "http://" : "https://";
 $url .= $_SERVER["HTTP_HOST"];
 define('BASE_URL', $url);

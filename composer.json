@@ -10,5 +10,8 @@
         "catfan/Medoo": "^1.0",
         "monolog/monolog": "^1.19",
         "phpmailer/phpmailer": "^5.2"
+    },
+    "autoload": {
+        "psr-4": {"WWM\\": "partials/"}
     }
 }
