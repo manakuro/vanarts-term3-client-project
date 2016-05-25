@@ -164,6 +164,13 @@ $config = array(
 
         )
 
+    ),
+
+    // News
+    'news' => array(
+        'pagination_per_page_limit' => 10,
+        'pagination_range' => 5
+
     )
 
 

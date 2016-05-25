@@ -212,24 +212,24 @@ $nav-inner-space: 1rem;
 
     // News List
     .sec-top-news-list {
-        @extend .sec-news-list;
+        @extend .sec-list;
     }
 
     .sec-top-news-list-headline-wrapper {
-        @extend .sec-news-list-headline-wrapper;
+        @extend .sec-list-headline-wrapper;
         height: 160px;
     }
 
     .sec-top-news-list-bottom {
-        @extend .sec-news-list-bottom;
+        @extend .sec-list-bottom;
     }
 
     .sec-top-news-list-headline {
-        @extend .sec-news-list-headline;
+        @extend .sec-list-headline;
     }
 
     .sec-top-news-list-date {
-        @extend .sec-news-list-date;
+        @extend .sec-list-date;
     }
 }
 
@@ -250,8 +250,9 @@ $nav-inner-space: 1rem;
     .sec-home-videos-list-wrapper {
         padding: 0;
 
-        overflow: scroll;
-        height: 57vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        // height: 21rem;
     }
 
     .sec-home-videos-list {
@@ -425,7 +426,7 @@ $nav-inner-space: 1rem;
 
     // news list
     .sec-home-features-list {
-        @extend .sec-news-list;
+        @extend .sec-list;
 
         &:nth-child(-n+4) {
             margin-top: 0;
@@ -435,23 +436,23 @@ $nav-inner-space: 1rem;
 
     // headline wrapper
     .sec-home-features-list-headline-wrapper {
-        @extend .sec-news-list-headline-wrapper;
+        @extend .sec-list-headline-wrapper;
 
         height: 200px;
     }
 
     // headline
     .sec-home-features-list-headline {
-        @extend .sec-news-list-headline;   
+        @extend .sec-list-headline;   
     }
 
     .sec-home-features-list-bottom {
-        @extend .sec-news-list-bottom;
+        @extend .sec-list-bottom;
     }
 
     // date
     .sec-home-features-list-date {
-        @extend .sec-news-list-date;
+        @extend .sec-list-date;
     }
 
 }
@@ -465,35 +466,37 @@ $nav-inner-space: 1rem;
         @include btn-style(6rem);
         font-size: 1.3rem;
     }
-
-    // popular
-    .sec-popular {
-        background: $white;
-        margin-top: 2rem;
-
-        font-family: $heading-font;
-
-        a {
-            @include hover(color);
-        }
-    }
-
-    .sec-popular-list-inner {
-        padding: 1rem;
-    }
-
-    .sec-popular-list-heading {
-        font-size: 1rem;
-        margin-top: .3rem;
-        text-transform: uppercase;
-        color: $light-blue;
-    }    
-
-    .sec-popular-list-headline {
-        font-size: .8rem;
-    }
-
 }
+
+// popular
+.sec-popular {
+    background: $white;
+    margin-top: 2rem;
+
+    font-family: $heading-font;
+
+    a {
+        @include hover(color);
+    }
+}
+
+.sec-popular-list-inner {
+    padding: 1rem;
+}
+
+.sec-popular-list-heading {
+    font-size: 1rem;
+    font-family: $heading-font;
+    margin-top: .3rem;
+    text-transform: uppercase;
+    color: $light-blue;
+}    
+
+.sec-popular-list-headline {
+    font-size: .8rem;
+}
+
+
 
 /*---------------------------
     FOOTER SECTION
@@ -575,6 +578,10 @@ $nav-inner-space: 1rem;
 
 }
 
+/*---------------------------
+    NEWS PAGE
+---------------------------*/
+@import 'news.scss';
 
 /* --------------------------
         STATES

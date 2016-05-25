@@ -84,13 +84,19 @@
                                 <h3 class="sec-heading">top news</h3>                              
                             </div>
 
-                            <div class="sec-top-img-wrapper">
+                            <div class="sec-top-img-wrapper social-media-outer">
                                 
                                 <a href="#">
             
                                     <img src="<?php echo $topNews['img']; ?>" alt="<?php echo $topNews['title']; ?>">
 
                                     <h5 class="sec-top-img-headline"><?php echo $topNews['title']; ?></h5>    
+
+                                    <div class="social-wrapper">
+                                        <ul class="social">
+                                            <?php echo Utility::getSocialLink($config['social_media']); ?>
+                                        </ul>
+                                    </div>
 
                                 </a>
 
@@ -100,9 +106,9 @@
 
                         <!-- news section -->
                     <?php foreach($newsData as $val): ?>
-                        <div class="span-l-4 columns sec-top-news-list">
+                        <div class="span-l-4 columns sec-top-news-list social-media-outer">
                             
-                            <a href="single_post.php?news=1">
+                            <a href="single_post.php?news=<?php echo $val['id']?>" class="sec-news-link">
                                 
                                 <img src="<?php echo $val['img']; ?>" alt="<?php echo $val['title']; ?>">
 
@@ -112,11 +118,11 @@
 
                                     <div class="sec-top-news-list-bottom">
 
-                                        <span class="sec-top-news-list-date"><?php 
-                                        echo Utility::datetimeToPostDate($val['post_date']);
-                                        ?></span>
+                                        <span class="sec-top-news-list-date">
+                                        <?php echo Utility::datetimeToPostDate($val['post_date']); ?>                                            
+                                        </span>
+                                        <button class="tag">POP</button>
 
-                                        <a href="#" class="tag">POP</a>
                                     </div>
 
                                 </div>
@@ -124,6 +130,7 @@
                             </a>
 
                         </div><!-- /news section -->
+
                     <?php endforeach; ?>
 
                     </div>
@@ -145,7 +152,7 @@
                         </div>
 
                         <!-- top video -->
-                        <div class="columns sec-home-videos-top">
+                        <div class="columns sec-home-videos-top js-home-video-top">
                             
                             <div class="sec-top-img-wrapper">
 
@@ -153,7 +160,6 @@
                                     id="vid1"
                                     class="video-js vjs-default-skin"
                                     controls
-                                    width="640" height="264"
                                     data-setup='{ 
                                         "techOrder": ["youtube", "vimeo"], 
                                         "sources": [{ "type": "video/vimeo", "src": "https://vimeo.com/75286772"}] }'
@@ -166,7 +172,7 @@
 
                         </div>
 
-                        <div class="span-4 columns sec-home-videos-list-wrapper">
+                        <div class="span-4 columns sec-home-videos-list-wrapper js-home-video-list">
 
                         <?php foreach($videoData as $val): ?>
                             <div class="sec-home-videos-list cf">
@@ -280,7 +286,7 @@
                     <?php foreach($featuresData as $val): ?>
                         <div class="span-l-4 columns sec-home-features-list">
                             
-                            <a href="single_post.php?news=<?php echo $val['id']; ?>">
+                            <a href="single_post.php?news=<?php echo $val['id']; ?>" class="sec-news-link">
                                 
                                 <img src="<?php echo $val['img']; ?>" alt="<?php echo $val['title']; ?>">
 

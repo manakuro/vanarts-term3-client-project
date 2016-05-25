@@ -1,0 +1,26 @@
+.sec-news {
+
+    .sec-news-list {
+        @extend .sec-list;
+        padding: $column-padding;
+        background: $white;
+    }
+
+    .sec-news-list-date{
+        @extend .sec-list-date;
+    }
+
+    .sec-news-list-heading {
+        @extend .sec-popular-list-heading;
+    }
+
+    .sec-news-list-headline {
+        @extend .sec-list-headline;
+        font-size: 1.3rem;
+    }
+    
+    .tag-sec-news-list {
+        margin: .5rem 0;
+    }
+
+}
