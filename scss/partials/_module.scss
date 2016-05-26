@@ -225,62 +225,124 @@
 .input-wrapper {
     margin: 1em 0;
     padding: 1em 0;
-
-    &.checkbox {
-
-        .input-label {
-            margin-right: 1rem;
-        }
-
-    }
 }
 
 .input {
     width: 100%;
-    height: 1.5em;
+    height: 2rem;
     border: 2px solid #EEE9E9;
-    font-size: 1em;
+    font-size: 1rem;
     transition: border-color .5s;
+
+// &:hover {
+//     border-color: $main-colour;
+// }
+
 }
 
-.input:hover {
-    border-color: $main-colour;
+%input-label {
+    font-family: $heading-font;
+    text-transform: uppercase;
+    vertical-align: baseline;
+
+    &:after {
+        content: ": ";
+        font-size: 1rem;
+        padding: 0 .5rem;
+    }
 }
 
-.input-left {
-    text-align: left;
-}
+
+
+
+
+
 
 /* select */
-.select {
-    border: 2px solid #EEE9E9;
-    border-radius: 5px;
-}
+// .select {
+//     border: 2px solid #EEE9E9;
+//     border-radius: 5px;
+// }
 
 /* label */
-.label-span {
-    font-size: 2em;
-    font-weight: 500;
-    display: block;
-    margin: 5px;
-    text-align: left;
+// .label-span {
+//     font-size: 2em;
+//     font-weight: 500;
+//     display: block;
+//     margin: 5px;
+//     text-align: left;
 
-}
+// }
 
-.input-label {
-    margin: 2em 0;
-}
-
-/* textarea */
+// textarea
 .textarea {
-    height: 9em;
-
+    height: 9rem;
 }
 
-/* button */
+// button
 .btn {
     @include btn-style(10rem);
 }   
+
+// form for inline layout
+.form-inline {
+    display: flex;
+    align-items: flex-end;
+}
+
+.input-wrapper-inline {
+    margin-right: 1rem;
+    flex-grow: 1;
+
+    &:last-child {
+        margin-right: 0;
+    }
+    
+}
+
+.input-label {
+    @extend  %input-label;
+    display: block;
+    font-size: .7rem;
+}
+
+%input {
+    width: 100%;
+    background: $white;
+    font-family: $heading-font;
+}
+
+.input-date-wrapper {
+    position: relative;
+}
+
+.input-date {
+    @extend %input;
+    padding: .5rem .2rem .5rem 2rem;
+}
+
+.input-date-icon {
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    margin-top: -8px;
+}
+
+.input-select {
+    @extend %input;
+    border: 0;
+    border-radius: 0;
+    padding: .5rem 1rem;
+
+    text-transform: uppercase;
+
+}
+
+.input-search {
+    @extend %input;
+    padding: .5rem;
+}
+
 
 /*-- Layout --*/
 .hidden {
@@ -382,4 +444,12 @@
         padding: .2rem;
     }
 
+}
+
+
+.holizontal-divider {
+    width: 100%;
+    height: 1px;
+    background: $black;
+    margin: 2rem 0;
 }

@@ -171,7 +171,14 @@ $config = array(
         'pagination_per_page_limit' => 10,
         'pagination_range' => 5
 
-    )
+    ),
+
+    // Events
+    'events' => array(
+        'pagination_per_page_limit' => 10,
+        'pagination_range' => 5
+
+    ),
 
 
 );
