@@ -1,0 +1,59 @@
+/*---------------------------
+    FILTER SECTION
+---------------------------*/
+.sec-filter {
+    margin: 1rem 0;
+}
+
+/*---------------------------
+    EVENTS SECTION
+---------------------------*/
+.sec-evnets {
+
+    .sec-events-list {
+        @extend .sec-list;
+        background: $white;
+    }
+
+    .sec-events-list-inner {
+        position: relative;
+        margin: 1rem 1rem 1rem 0;
+    }
+
+    .sec-events-list-date {
+        @extend .sec-list-date;
+    }
+
+    .sec-events-list-headlne-outer {
+        margin-top: .5rem;
+    }
+
+    .sec-events-list-heading {
+        @extend .sec-popular-list-heading;
+        display: block;
+        margin: 0;
+    }
+
+    .sec-events-list-headline {
+        @extend .sec-list-headline;
+        font-size: 1.3rem;
+    }
+
+    // buy ticket button
+    .buy-ticket {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    // social media
+    .sec-events-list-social {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+
+
+

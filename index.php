@@ -86,7 +86,7 @@
 
                             <div class="sec-top-img-wrapper social-media-outer">
                                 
-                                <a href="#">
+                                <a href="single.php?news_id=<?php echo $topNews['id']; ?>">
             
                                     <img src="<?php echo $topNews['img']; ?>" alt="<?php echo $topNews['title']; ?>">
 
@@ -108,9 +108,9 @@
                     <?php foreach($newsData as $val): ?>
                         <div class="span-l-4 columns sec-top-news-list social-media-outer">
                             
-                            <a href="single_post.php?news=<?php echo $val['id']?>" class="sec-news-link">
+                            <a href="single.php?news_id=<?php echo $val['id']?>" class="sec-news-link">
                                 
-                                <img src="<?php echo $val['img']; ?>" alt="<?php echo $val['title']; ?>">
+                                <img src="<?php echo $val['thumb']; ?>" alt="<?php echo $val['title']; ?>">
 
                                 <div class="sec-top-news-list-headline-wrapper">
                                     

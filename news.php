@@ -55,7 +55,7 @@
 
                             <div class="sec-top-img-wrapper social-media-outer">
                                 
-                                <a href="#">
+                                <a href="single.php?news_id=<?php echo $topNews['id']; ?>">
             
                                     <img src="<?php echo $topNews['img']; ?>" alt="<?php echo $topNews['title']; ?>">
 
@@ -78,7 +78,7 @@
 
                             <div class="sec-news-list">
                                 
-                                <a href="news_single.php?news_id=<?php echo $val['id']; ?>" class="sec-news-link">
+                                <a href="single.php?news_id=<?php echo $val['id']; ?>" class="sec-news-link">
                                     
                                     <div class="row">
                                         
@@ -95,7 +95,7 @@
 
                                         <div class="span-l-3 columns">
                                             
-                                            <img src="<?php echo $val['img']; ?>" alt="<?php echo $val['title']; ?>">
+                                            <img src="<?php echo $val['thumb']; ?>" alt="<?php echo $val['title']; ?>">
 
                                         </div>
 
