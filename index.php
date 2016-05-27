@@ -288,7 +288,7 @@
                             
                             <a href="single_post.php?news=<?php echo $val['id']; ?>" class="sec-news-link">
                                 
-                                <img src="<?php echo $val['img']; ?>" alt="<?php echo $val['title']; ?>">
+                                <img src="<?php echo $val['thumb']; ?>" alt="<?php echo $val['title']; ?>">
 
                                 <div class="sec-home-features-list-headline-wrapper">
                                     
