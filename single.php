@@ -12,7 +12,7 @@
     $numberOfRows = $db->count('dt_news');
     
     // grab news data 
-    $id = 0;
+    $id = 1;
     if ($_GET['news_id']) {
         $id = $_GET['news_id'];
     }

@@ -21,6 +21,9 @@
         <title><?php echo $config['title']?></title>
         <meta name="description" content="<?php echo $config['meta']['desc']?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- perevent google search robots from indexing -->
+        <meta name="robots" content="noindex" /> 
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
@@ -45,7 +48,7 @@
             
                 <div class="span-l-2 columns">
                     <div class="logo">
-                        <a href="index.php"><img src="img/logo.png"></a>
+                        <a href="<?php echo BASE_URL; ?>"><img src="img/logo.png"></a>
                     </div>
                 </div>
 

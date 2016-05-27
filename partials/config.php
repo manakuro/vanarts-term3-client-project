@@ -180,5 +180,11 @@ $config = array(
 
     ),
 
+    // Reviews
+    'reviews' => array(
+        'pagination_per_page_limit' => 12,
+        'pagination_range' => 5
+
+    ),
 
 );
