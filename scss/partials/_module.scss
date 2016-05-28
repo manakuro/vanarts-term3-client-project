@@ -294,6 +294,10 @@
     margin-right: 1rem;
     flex-grow: 1;
 
+    &.no-grow {
+        flex-grow: 0;
+    }
+
     &:last-child {
         margin-right: 0;
     }

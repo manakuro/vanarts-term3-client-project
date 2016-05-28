@@ -301,122 +301,121 @@ $nav-inner-space: 1rem;
 /*---------------------------
     HOME CHARTS
 ---------------------------*/
-@mixin playing-style {
+@mixin playing-style($width: .1rem) {
     background: $main-colour;
-    border: .1em solid $main-colour;
+    border: $width solid $main-colour;
 }
 .sec-home-charts {
     background: $white;
     font-family: $heading-font;
+}
 
-    // list
-    .sec-home-charts-list {
-        margin-top: 1rem;
+// charts list
+.sec-home-charts-list {
+    margin-top: 1rem;
 
-        &:last-child {
-            margin-bottom: 1rem;
-        }
-
+    &:last-child {
+        margin-bottom: 1rem;
     }
 
-    // ranks
-    .sec-home-charts-list-ranks-wrapper {
-        text-align: center;
-        margin-top: 3rem;
+}
+
+// ranks
+.sec-home-charts-list-ranks-wrapper {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+// img
+.sec-home-charts-list-img-wrapper {
+    position: relative;
+    padding: 0;
+
+    &:hover .sec-home-charts-list-play {
+        @include playing-style(.1em);
     }
 
-    // img
-    .sec-home-charts-list-img-wrapper {
-        position: relative;
-        padding: 0;
+    img {
+        // -webkit-transition: opacity .25s;
+        //         transition: opacity .25s;
+    }
+
+    &:hover img {
+        opacity: .8;
+    }
+
+    // while playing 
+    &.playing {
 
         .sec-home-charts-list-play {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            font-size: 1.5rem;
-            color: $white;
-            margin-left: -1.5rem;
-            margin-top: -1.5rem;
-            border-radius: 100%;
-            border: .1em solid $white;
-            width: 3rem;
-            height: 3rem;
-            background: rgba(43,51,63,.7);
-
-            -webkit-transition: background .25s, border .25s;
-                    transition: background .25s, border .25s;
-
-            // button style while playing
-            &:before {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                margin-left: -7px;
-                margin-top: -12px;
-            }
-
-            // button style while pausing
-            &.fa-pause:before {
-                margin-left: -10px;
-                margin-top: -12px;   
-            }
-        }
-
-        &:hover .sec-home-charts-list-play {
-            @include playing-style;
+            @include playing-style(.1em);
         }
 
         img {
-            -webkit-transition: opacity .25s;
-                    transition: opacity .25s;
-        }
-
-        &:hover img {
             opacity: .8;
         }
 
-        // while playing 
-        &.playing {
-
-            .sec-home-charts-list-play {
-                @include playing-style;
-            }
-
-            img {
-                opacity: .8;
-            }
-
-        }
-
     }
 
-    // name of singer
-    .sec-home-charts-list-singer {
-        font-size: 1rem;
+}
+
+.sec-home-charts-list-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+    color: $white;
+    margin-left: -1.5rem;
+    margin-top: -1.5rem;
+    border-radius: 100%;
+    border: .1em solid $white;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(43,51,63,.7);
+
+    -webkit-transition: background .25s, border .25s;
+            transition: background .25s, border .25s;
+
+    // button style while playing
+    &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -7px;
+        margin-top: -12px;
     }
 
-    // title
-    .sec-home-charts-list-title {
-        font-size: 1.3rem;
+    // button style while pausing
+    &.fa-pause:before {
+        margin-left: -10px;
+        margin-top: -12px;   
     }
+}
 
-    // social media link
-    .sec-home-charts-social {
-        opacity: 0;
+// name of singer
+.sec-home-charts-list-singer {
+    font-size: 1rem;
+}
 
-        -webkit-transition: all .25s;
-                transition: all .25s;
-    }
-    .social {
-        @extend .social;
+// title
+.sec-home-charts-list-title {
+    font-size: 1.3rem;
+}
 
-    }
+// social media link
+.sec-home-charts-social {
+    opacity: 0;
 
-    .sec-home-charts-list:hover .sec-home-charts-social{
-        opacity: 1;
-    }
+    -webkit-transition: all .25s;
+            transition: all .25s;
+}
+.social {
+    @extend .social;
 
+}
+
+.sec-home-charts-list:hover .sec-home-charts-social {
+    opacity: 1;
 }
 
 /*---------------------------
@@ -603,6 +602,11 @@ $nav-inner-space: 1rem;
     FEATURES PAGE
 ---------------------------*/
 @import 'features.scss';
+
+/*---------------------------
+    FEATURES PAGE
+---------------------------*/
+@import 'charts.scss';
 
 /* --------------------------
         STATES

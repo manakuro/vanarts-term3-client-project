@@ -84,7 +84,7 @@
                                         
                                         <div class="input-date-wrapper">
 
-                                            <input type="date" class="input-date" name="event_date_from" value="<?php echo date("Y-m-d H:i:s");?>">
+                                            <input type="date" class="input-date" name="event_date_from" value="<?php echo date('Y-m-d H:i:s');?>">
 
                                             <i class="fa fa-calendar-o input-date-icon" aria-hidden="true"></i>
                                             
@@ -97,7 +97,7 @@
                                         
                                          <div class="input-date-wrapper">
 
-                                            <input type="date" class="input-date" name="event_date_to" value="<?php echo date("Y-m-d H:i:s");?>">
+                                            <input type="date" class="input-date" name="event_date_to" value="<?php echo date('Y-m-d H:i:s');?>">
 
                                             <i class="fa fa-calendar-o input-date-icon" aria-hidden="true"></i>
                                             
@@ -111,14 +111,14 @@
                                         <select name="event_categories" class="input-select">
                                         <?php foreach($categories as $val): ?>
                                             <option value="<?php echo $val['id']; ?>"><?php echo $val['name']; ?></option>
-                                        <? endforeach; ?>
+                                        <?php endforeach; ?>
                                         </select>
 
                                     </div>
 
                                     <div class="input-wrapper-inline">
                                         
-                                        <input type="text" name="event_keyword" value="" class="input-search"placeholder="Search for keywords">
+                                        <input type="text" name="event_keyword" value="" class="input-search" placeholder="Search for keywords">
 
                                     </div>
 
@@ -130,7 +130,7 @@
                         </div><!-- /filter -->
 
                     <?php 
-                        foreach($eventsData as $val): 
+                        foreach($eventsData as $val):
 
                         // event date, time and place
                         $eventDesc = date('H:i', strtotime($val['event_time_start'])).'-'.

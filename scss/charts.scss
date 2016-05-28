@@ -1,0 +1,60 @@
+.sec-charts {
+    font-family: $heading-font;
+}
+
+// charts list brackground
+.sec-charts-list-outer {
+    background: $white;
+}
+
+// charts list
+.sec-charts-list {
+    @extend .sec-home-charts-list;
+}
+
+// ranks
+.sec-charts-list-ranks-wrapper {
+    @extend .sec-home-charts-list-ranks-wrapper;
+}
+
+// img
+.sec-charts-list-img-wrapper {
+     @extend .sec-home-charts-list-img-wrapper;
+
+    &:hover .sec-charts-list-play {
+        @include playing-style;
+    }
+
+    // while playing 
+    &.playing {
+        .sec-charts-list-play {
+            @include playing-style;
+        }
+    }
+}
+
+.sec-charts-list-play {
+    @extend .sec-home-charts-list-play;
+}
+
+// name of singer
+.sec-charts-list-singer {
+    @extend .sec-home-charts-list-singer;
+}
+
+// title
+.sec-charts-list-title {
+    @extend .sec-home-charts-list-title;
+}
+
+// social media link
+.sec-charts-social {
+    @extend .sec-home-charts-social;
+}
+.social {
+    @extend .social;
+}
+
+.sec-charts-list:hover .sec-charts-social {
+    opacity: 1;
+}

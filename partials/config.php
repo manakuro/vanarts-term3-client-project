@@ -1,7 +1,6 @@
 <?php
 
 $config = array(
-
     // Title
     'title' => 'WWM',
 
@@ -12,7 +11,6 @@ $config = array(
 
     // Navigation
     'nav' => array(
-
         'news' => array(
             'name' => 'News',
             'href' => 'news.php',
@@ -103,7 +101,6 @@ $config = array(
 
     // Social Media
     'social_media' => array(
-
         'twitter' => array(
             'name' => 'twitter',
             'class' => 'fa fa-twitter',
@@ -191,6 +188,12 @@ $config = array(
     'features' => array(
         'pagination_per_page_limit' => 12,
         'pagination_range' => 5
+
+    ),
+
+    // Charts
+    'charts' => array(
+        'limit' => 100
 
     ),
 
