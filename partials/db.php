@@ -23,7 +23,7 @@ class DB {
      * @param string $password [description]
      * @param string $database [description]
      */
-    function __construct($hostname = 'localhost', $username = 'root', $password = 'root', $database = 'wwm') {
+    function __construct($hostname = 'localhost', $username = 'root', $password = '', $database = 'wwm') {
         $this->_hostname = $hostname;
         $this->_username = $username;
         $this->_password = $password;

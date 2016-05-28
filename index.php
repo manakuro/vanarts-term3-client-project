@@ -230,7 +230,7 @@
                                     
                                     <a href="#">
                                         
-                                        <img class="sec-home-charts-list-img" src="<?php echo $val['img']; ?>" alt="<?php echo $val['title']; ?>">
+                                        <img class="sec-home-charts-list-img" src="<?php echo $val['thumb']; ?>" alt="<?php echo $val['title']; ?>">
 
                                         <i class="fa fa-play sec-home-charts-list-play js-audio-icon" aria-hidden="true"></i>
 
@@ -242,12 +242,6 @@
                                         
                                     <h5 class="sec-home-charts-list-singer"><?php echo $val['singer']; ?></h5>
                                     <h5 class="sec-home-charts-list-title"><?php echo $val['title']; ?></h5>
-
-<!--                                     <div class="audio-wrapper">
-
-                                        <audio src="mp3/is_It_good_to_you.mp3" preload="none" />
-                  
-                                    </div> -->
 
                                 </div>
 
