@@ -10,18 +10,19 @@
     // grab news data from dt_news table
     $newsData = $db->select('dt_news', '*', array(
         'ORDER' => 'post_date DESC',
-        'LIMIT' => 4
+        'LIMIT' => 7
     ));
 
     $topNews = $newsData[0];
     array_splice($newsData, 0, 1);
 
-
     // grab video data from dt_videos table
     $videoData = $db->select('dt_videos', '*', array(
         'ORDER' => 'post_date DESC',
-        'LIMIT' => 10
+        'LIMIT' => 11
     ));
+    $topVideo = $videoData[0];
+    array_splice($videoData, 0, 1);
 
     // grab charts data from dt_charts table
     $chartsData = $db->select('dt_charts', '*', array(
@@ -138,7 +139,7 @@
                 </section><!-- /sec-top-news  -->
 
                 <!-- sec-home-videos  -->
-                <section class="sec sec-home-videos">
+                <section class="sec sec-home-videos js-video-container">
                     
                     <div class="row">
                         
@@ -156,7 +157,7 @@
                             
                             <div class="sec-top-img-wrapper">
 
-                                <video
+<!--                                 <video
                                     id="vid1"
                                     class="video-js vjs-default-skin"
                                     controls
@@ -164,9 +165,21 @@
                                         "techOrder": ["youtube", "vimeo"], 
                                         "sources": [{ "type": "video/vimeo", "src": "https://vimeo.com/75286772"}] }'
                                   >
-                                </video>
+                                </video> -->
 
-                                <h5 class="sec-top-img-headline">The Weeknd pulls out of European leg of Rihanna’s ANTI Tour</h5>    
+                                <a href="<?php echo $topVideo['src']; ?>" class="js-popup-video">
+
+                                    <div class="sec-videos-list-img-wrapper-top">
+
+                                        <img src="<?php echo $topVideo['img']; ?>" alt="<?php echo $topVideo['title']; ?>">
+
+                                        <i class="fa fa-play sec-videos-list-play-top js-audio-icon" aria-hidden="true"></i>
+                                        
+                                    </div>
+
+                                    <h5 class="sec-top-img-headline"><?php echo $topVideo['title']; ?></h5>  
+
+                                </a>
 
                             </div>
 
@@ -177,8 +190,7 @@
                         <?php foreach($videoData as $val): ?>
                             <div class="sec-home-videos-list cf">
                             
-                                <a href="#">
-                                    
+                                <a href="<?php echo $val['src']?>" class="sec-news-link js-popup-video">                                    
                                     <div class="sec-home-videos-list-img-wrapper">
                                         <img src="<?php echo $val['img']; ?>" alt="<?php echo $val['title']; ?>">
                                     </div>

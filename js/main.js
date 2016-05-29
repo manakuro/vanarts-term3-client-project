@@ -31,13 +31,42 @@ $(function(){
     // video
     var $homeVideoTop = $('.js-home-video-top');
     if ($homeVideoTop.length > 0) {
-
         // adjust height of video list depending on hight of the top video
         $('.js-home-video-list').height($homeVideoTop.height());
     }
 
 
+    var $videoContainer = $('.js-video-container');
+    if ($videoContainer.length > 0) {
+        $.extend(true, $.magnificPopup.defaults, {
+          tClose: 'Close (Esc)', // Alt text on close button
+          tLoading: 'Loading...', // Text that is displayed during loading. Can contain %curr% and %total% keys
+          gallery: {
+            tPrev: 'Previous (Left arrow key)', // Alt text on left arrow
+            tNext: 'Next (Right arrow key)', // Alt text on right arrow
+            tCounter: '%curr% of %total%' // Markup for "1 of 7" counter
+          },
+          image: {
+            tError: '<a href="%url%">The image</a> could not be loaded.' // Error message when image could not be loaded
+          },
+          ajax: {
+            tError: '<a href="%url%">The content</a> could not be loaded.' // Error message when ajax request failed
+          }
+        });
 
+        $videoContainer.magnificPopup({
+            delegate: '.js-popup-video',
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removeDelay: 200,
+            preloader: false,
+            fixedContentPos: false,
+            gallery: {
+              enabled:true
+            },
+        });
+
+    }
 
 
 

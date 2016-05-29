@@ -33,6 +33,7 @@
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/libs/normalize.css">
         <link rel="stylesheet" href="css/libs/video-js.css">
+        <link rel="stylesheet" href="css/libs/magnific-popup.css">
         <link rel="stylesheet" href="css/main.min.css">
 
     </head>
