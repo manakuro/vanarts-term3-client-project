@@ -1,0 +1,24 @@
+.sec-interviews-list {
+    @extend .sec-list;
+}
+
+.sec-interviews-list-top {
+    margin-top: 0;
+}
+
+.sec-interviews-list-headline-wrapper {
+    @extend .sec-list-headline-wrapper;
+    height: 160px;
+}
+
+.sec-interviews-list-bottom {
+    @extend .sec-list-bottom;
+}
+
+.sec-interviews-list-headline {
+    @extend .sec-list-headline;
+}
+
+.sec-interviews-list-date {
+    @extend .sec-list-date;
+}
