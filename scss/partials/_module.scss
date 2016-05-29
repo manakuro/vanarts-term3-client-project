@@ -48,7 +48,9 @@
     transition: border-color .5s;
 }
 
-/*-- Section --*/
+/* --------------------------
+        SECTION
+----------------------------*/
 .sec {
     margin: 4rem 0 4rem 0;
 
@@ -149,7 +151,9 @@
     color: $light-grey;
 }
 
-// Social Media
+/* --------------------------
+        SOCIAL MEDIA
+----------------------------*/
 .social {
     text-align: right;
 
@@ -194,7 +198,9 @@
             transition: all .25s;
 }
 
-// Newsletter Form
+/* --------------------------
+        NEWSLETTER FORM
+----------------------------*/
 .newsletter-form {
 
     position: relative;
@@ -450,7 +456,83 @@
 
 }
 
+/* --------------------------
+    AUDIO & VIDEO
+----------------------------*/
+@mixin playing-style($width: .1em) {
+    background: $main-colour;
+    border: $width solid $main-colour;
+}
 
+@mixin play-icon-wrapper($icon) {
+    position: relative;
+    padding: 0;
+
+    &:hover #{$icon} {
+        @include playing-style(.1em);
+    }
+
+    img {
+        // -webkit-transition: opacity .25s;
+        //         transition: opacity .25s;
+    }
+
+    &:hover img {
+        opacity: .8;
+    }
+
+    // while playing 
+    &.playing {
+
+        #{$icon} {
+            @include playing-style(.1em);
+        }
+
+        img {
+            opacity: .8;
+        }
+
+    }
+
+}
+
+%play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+    color: $white;
+    margin-left: -1.5rem;
+    margin-top: -1.5rem;
+    border-radius: 100%;
+    border: .1em solid $white;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(43,51,63,.7);
+
+    -webkit-transition: background .25s, border .25s;
+            transition: background .25s, border .25s;
+
+    // button style while playing
+    &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -7px;
+        margin-top: -12px;
+    }
+
+    // button style while pausing
+    &.fa-pause:before {
+        margin-left: -10px;
+        margin-top: -12px;   
+    }
+}
+
+
+/* --------------------------
+    OTHERS
+----------------------------*/
 .holizontal-divider {
     width: 100%;
     height: 1px;

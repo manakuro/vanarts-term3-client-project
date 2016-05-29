@@ -19,22 +19,12 @@
 
 // img
 .sec-charts-list-img-wrapper {
-     @extend .sec-home-charts-list-img-wrapper;
-
-    &:hover .sec-charts-list-play {
-        @include playing-style;
-    }
-
-    // while playing 
-    &.playing {
-        .sec-charts-list-play {
-            @include playing-style;
-        }
-    }
+    @include play-icon-wrapper('.sec-charts-list-play');
 }
 
+// icon of play
 .sec-charts-list-play {
-    @extend .sec-home-charts-list-play;
+    @extend %play-icon;
 }
 
 // name of singer
