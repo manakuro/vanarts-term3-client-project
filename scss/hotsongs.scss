@@ -1,0 +1,24 @@
+.sec-hotsongs-list {
+    @extend .sec-list;
+}
+
+.sec-hotsongs-list-top {
+    margin-top: 0;
+}
+
+.sec-hotsongs-list-headline-wrapper {
+    @extend .sec-list-headline-wrapper;
+    height: 160px;
+}
+
+.sec-hotsongs-list-bottom {
+    @extend .sec-list-bottom;
+}
+
+.sec-hotsongs-list-headline {
+    @extend .sec-list-headline;
+}
+
+.sec-hotsongs-list-date {
+    @extend .sec-list-date;
+}

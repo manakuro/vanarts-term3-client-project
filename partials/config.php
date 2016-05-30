@@ -57,7 +57,7 @@ $config = array(
         'hot_songs' => array(
             'name' => 'Hot Songs',
             'class' => '',
-            'href' => 'hot_songs.php',
+            'href' => 'hotsongs.php',
             'sub_menu' => array()
         ),
         'charts' => array(
@@ -205,6 +205,12 @@ $config = array(
 
     // Interviews
     'interviews' => array(
+        'pagination_per_page_limit' => 12,
+        'pagination_range' => 5
+    ),
+
+    // Hot Sings
+    'hotsongs' => array(
         'pagination_per_page_limit' => 12,
         'pagination_range' => 5
     ),
