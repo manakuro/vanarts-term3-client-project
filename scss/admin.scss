@@ -1,0 +1,171 @@
+/* --------------------------
+    LAYOUT
+----------------------------*/
+
+
+/* --------------------------
+    HEADER
+----------------------------*/
+/* Login */
+.section-login {
+    height: 100vh;
+}
+
+/* Footer */
+.admin-page-footer {
+    background: $black;
+    color: $white;
+    padding: 10px;
+
+    .page-footer-nav {
+        li {
+            position: relative;
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            a {
+                color: $white;
+                font-size: 1.5em;
+                text-transform: uppercase;
+
+            -webkit-transition: all .5s;
+               -moz-transition: all .5s;
+                -ms-transition: all .5s;
+                 -o-transition: all .5s;
+                    transition: all .5s;
+
+            }
+
+            a:hover {
+                color: $main-colour;
+            }
+
+            &:after {
+                content: "";
+                width: 1px;
+                height: 80%;
+                background: $white;
+                display: inline-block;
+                position: absolute;
+                right: -10px;
+            }
+        }
+
+    }
+
+    .footer-cap {
+        font-size: 1.5em;
+        margin-top: 7px;
+    }
+
+}
+
+/* --------------------------
+    MODULES
+----------------------------*/
+.error-msg {
+    margin: 60px auto;
+    font-size: 2em;
+    color: $error;
+    font-weight: 900;
+}
+
+.new-wrapper {
+    margin-top: 2rem;
+    text-align: right;
+
+    .btn {
+        display: inline-block;
+    }
+
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    border: 1px solid $light-grey;
+
+    .thead {
+        font-family: $heading-font;
+
+        td {
+            font-weight: bold;
+            background-color: $black;
+            color: $white;
+            font-size: 1rem;
+            text-transform: uppercase;
+            padding: 1rem;
+            border-right: 1px solid $light-grey;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+
+    }
+
+    .tbody {
+
+        .t-row:nth-child(2n+1) {
+            background-color: $white;
+        }
+
+        .t-row {
+
+            &.clickable {
+                cursor: pointer;
+            }
+
+            td {
+                padding: 10px;
+                font-size: 1rem;
+                border-right: 1px solid $light-grey;
+
+                &:last-child {
+                    border-right: none;
+                }
+            }
+
+            -webkit-transition: all .5s;
+               -moz-transition: all .5s;
+                -ms-transition: all .5s;
+                 -o-transition: all .5s;
+                    transition: all .5s;
+
+            &:hover {
+                background: $pink;
+            }
+
+        }
+
+        img {
+            width: 25%;
+        }
+
+        .del-btn {
+            width: 3rem;
+            margin: 0 auto;
+        }
+
+    }
+
+}
+
+/**  Form **/
+.sec-form {
+
+    .input-wrapper {
+        text-align: left;
+    }
+
+    .label-span {
+        @extend %input-label;
+    }
+
+    .thumb {
+        width: 25%;
+    }
+
+}
+

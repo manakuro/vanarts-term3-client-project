@@ -577,12 +577,17 @@ $nav-inner-space: 1rem;
 @import 'partials/_animation.scss';
 
 /* --------------------------
-        Print
+    Print
 ----------------------------*/
 @import 'partials/_print.scss';
 
 /* --------------------------
-        extend video.js
+    ADMIN PAGE
+----------------------------*/
+@import 'admin.scss';
+
+/* --------------------------
+    extend video.js
 ----------------------------*/
 @import 'videojs.scss';
 
