@@ -215,4 +215,84 @@ $config = array(
         'pagination_range' => 5
     ),
 
+
+    // Admin
+    // Navigation
+    'admin' => array(
+
+        'nav' => array(
+            'news' => array(
+                'name' => 'News',
+                'href' => 'admin_news.php',
+                'class' => 'parent-list',
+            ),
+            'hot_songs' => array(
+                'name' => 'Hot Songs',
+                'class' => '',
+                'href' => 'admin_hotsongs.php',
+                'sub_menu' => array()
+            ),
+            'charts' => array(
+                'name' => 'Charts',
+                'class' => '',
+                'href' => 'admin_charts.php',
+                'sub_menu' => array()
+            ),
+            'features' => array(
+                'name' => 'Features',
+                'class' => '',
+                'href' => 'admin_features.php',
+                'sub_menu' => array()
+            ),
+            'reviews' => array(
+                'name' => 'reviews',
+                'class' => '',
+                'href' => 'admin_reviews.php',
+                'sub_menu' => array()
+            ),
+            'videos' => array(
+                'name' => 'videos',
+                'class' => '',
+                'href' => 'admin_videos.php',
+                'sub_menu' => array()
+            ),
+            'events' => array(
+                'name' => 'events',
+                'class' => '',
+                'href' => 'admin_events.php',
+                'sub_menu' => array()
+            ),
+            'interviews' => array(
+                'name' => 'interviews',
+                'class' => '',
+                'href' => 'admin_interviews.php',
+                'sub_menu' => array()
+            )
+
+        ),
+
+        // Admin News
+        'admin_news' => array(
+            'pagination_per_page_limit' => 12,
+            'pagination_range' => 5,
+
+            'index_page' => 'admin_news.php',
+            'edit_page' => 'admin_news_edit.php',
+            'edit_process' => 'admin_news_edit_process.php',
+            'delete_page' => 'admin_news_delete.php',
+
+            // display as list of editing
+            'columns' => array(
+                'id' => array('name' => 'ID', 'class' => 'span-1'),
+                'title' => array('name' => 'Title', 'class' => 'span-3'),
+                'post_date' => array('name' => 'Posted Date', 'class' => 'span-2'),
+                // 'created_at' => array('name' => 'Created Date', 'class' => 'span-2'),
+                'updated_at' => array('name' => 'Updated Date', 'class' => 'span-2')
+            )
+
+        )
+
+    )
+
+
 );
