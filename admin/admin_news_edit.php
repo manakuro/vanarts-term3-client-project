@@ -50,7 +50,7 @@
 
                             <div class="sec-edit-img-wrapper">
                             <?php if (!empty($row['img'])):?>
-                                <img src="../<?php echo $row['img']; ?>" alt="">
+                                <img src="<?php echo $row['img']; ?>" alt="">
                             <?php endif; ?>
                             </div>
                         </li>
@@ -65,7 +65,7 @@
 
                             <div class="sec-edit-img-wrapper">
                             <?php if (!empty($row['thumb'])):?>
-                                <img src="../<?php echo $row['thumb']; ?>" alt="" class="thumb">
+                                <img src="<?php echo $row['thumb']; ?>" alt="" class="thumb">
                             <?php endif; ?>
                             </div>
                         </li>
@@ -84,7 +84,7 @@
                             <div class="input-wrapper span-12">
 
                                 <span class="label-span">Content</span>
-                                <textarea class="input textarea admin-ckeditor" name="content"><?php echo $row['content']; ?></textarea>
+                                <textarea class="input textarea admin-ckeditor" name="content"><?php echo (!empty($row['content'])) ? $row['content'] : ''; ?></textarea>
 
                             </div>
                         </li>

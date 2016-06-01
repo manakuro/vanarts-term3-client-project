@@ -267,6 +267,12 @@ $config = array(
                 'class' => '',
                 'href' => 'admin_interviews.php',
                 'sub_menu' => array()
+            ),
+            'logout' => array(
+                'name' => 'logout',
+                'class' => '',
+                'href' => 'logout.php',
+                'sub_menu' => array()
             )
 
         ),
@@ -288,7 +294,22 @@ $config = array(
                 'post_date' => array('name' => 'Posted Date', 'class' => 'span-2'),
                 // 'created_at' => array('name' => 'Created Date', 'class' => 'span-2'),
                 'updated_at' => array('name' => 'Updated Date', 'class' => 'span-2')
+            ),
+
+            // image folder
+            'imgs' => array(
+                'top_img' => array(
+                    'img_path' => '../img/news/',
+                    'input_name' => 'img',
+                    'table_column_name' => 'img'
+                ),
+                'thumb' => array(
+                    'img_path' => '../img/news/thumb/',
+                    'input_name' => 'thumb',
+                    'table_column_name' => 'thumb'
+                ),
             )
+            
 
         )
 
