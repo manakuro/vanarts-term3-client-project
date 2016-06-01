@@ -2,17 +2,18 @@
     
     include("../bootstrap.php");
 
+    use WWM\DB;
+    use WWM\Utility;
+
+    // setup database
+    $conn = new DB();
+    $db = $conn->forge();
+
     if (!empty($_POST['id'])) {
-
-        $conn = connectDB();
-        $table = 'dt_press';
-
-        $query = "DELETE FROM $table WHERE id = $_POST[id]";
-        $result = mysqli_query($conn, $query);
-        if (!$result) {
-            echo $conn->error;
-            exit;
-        }
+        $table = 'dt_news';
+        $db->delete($table, [
+            'id' => $_POST['id']
+        ]);
 
     }
 
