@@ -7,10 +7,6 @@
     $conn = new DB();
     $db = $conn->forge();
 
-    // pagination
-    $perPageLimit = $config['news']['pagination_per_page_limit'];
-    $numberOfRows = $db->count('dt_news');
-    
     // grab news data 
     $id = 1;
     if ($_GET['news_id']) {
@@ -24,6 +20,15 @@
     $featuresData = $db->select('dt_features', '*', array(
         'ORDER' => 'post_date DESC',
         'LIMIT' => 6
+    ));
+
+    // generate pagination
+    $numberOfRows = $db->count('dt_news');
+    $pagination = Utility::getPagenation(array(
+        'num_page' => $numberOfRows,
+        'current_page' => $id,
+        'query_column' => 'news_id',
+        'no_page' => true
     ));
 
 ?>
@@ -79,6 +84,10 @@
 
                                 </div><!-- /content -->
 
+                                <!-- pagination -->
+                                <?php echo $pagination; ?>
+                                <!-- /pagination -->
+
                                 <!-- social media -->
                                 <div class="sec-single-social">
                                     
@@ -118,7 +127,6 @@
 
                                 </form><!-- /comment -->
                                 
-
                             </div>
 
                         </div>
@@ -146,7 +154,7 @@
                             
                             <a href="single_post.php?news=<?php echo $val['id']; ?>" class="sec-news-link">
                                 
-                                <img src="<?php echo $val['img']; ?>" alt="<?php echo $val['title']; ?>">
+                                <img src="<?php echo $val['thumb']; ?>" alt="<?php echo $val['title']; ?>">
 
                                 <div class="sec-related-news-list-headline-wrapper">
                                     

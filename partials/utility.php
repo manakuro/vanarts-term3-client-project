@@ -82,9 +82,11 @@ class Utility {
 
     static function getPagenation($arg) {
         $currentPage = intval($arg['current_page']);
-        $range = intval($arg['range']);
+        $range = (!empty($arg['range'])) ? intval($arg['range']) : 5;
         $limit = intval($arg['num_page']);
         $url = htmlspecialchars($_SERVER['PHP_SELF']);
+        $queryColumn = (!empty($arg['query_column'])) ? $arg['query_column'] : 'page_num';
+        $noPage = (!empty($arg['no_page'])) ? true : false;
 
         $start = ($currentPage - floor($range/2) > 0) ? ($currentPage - floor($range/2)) : 1;
         $end = ($start > 1) ? ($currentPage + floor($range/2)) : $range;
@@ -97,14 +99,18 @@ class Utility {
         if ($currentPage === 1) {
             $btnClass = 'page-hide';
         }
-        $pagination .= '<a href="'. $url .'?page_num='. ($currentPage - 1) .'" class="page-next-news btn '. $btnClass .'">next</a>';
+        $pagination .= '<a href="'. $url .'?'. $queryColumn .'='. ($currentPage - 1) .'" class="page-next-news btn '. $btnClass .'">next</a>';
 
-        $pagination .= '<ul class="pagination">';
+        $paginationClass = '';
+        if ($noPage) {
+            $paginationClass = 'page-hide';
+        }
+        $pagination .= '<ul class="pagination '. $paginationClass .'">';
         for ($i = $start; $i <= $end; $i++) {
             $currentClass = (intval($i) === intval($currentPage)) ? 'page-current' : '';
 
             if ($i <= $limit && $i > 0) {
-                $pagination .= '<li class="page-item '. $currentClass. '"><a class="input-page" name="page_num" href="'. $url .'?page_num='. $i .'">'. $i .'</a></li>';
+                $pagination .= '<li class="page-item '. $currentClass. '"><a class="input-page" name="page_num" href="'. $url .'?'. $queryColumn .'='. $i .'">'. $i .'</a></li>';
             }
 
         }
@@ -115,7 +121,7 @@ class Utility {
         if ($currentPage === $limit) {
             $btnClass = 'page-hide';
         }
-        $pagination .= '<a href="'. $url .'?page_num='. ($currentPage + 1) .'" class="page-prev-news btn '. $btnClass .'">prev</a>';
+        $pagination .= '<a href="'. $url .'?'. $queryColumn .'='. ($currentPage + 1) .'" class="page-prev-news btn '. $btnClass .'">prev</a>';
 
         $pagination .= '</div>';
 
