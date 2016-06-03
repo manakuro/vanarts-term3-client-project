@@ -48,6 +48,35 @@
 }
 
 /*---------------------------
+    COMMENTS SECTION
+---------------------------*/
+.comment-lists {
+    margin-top: 2rem;   
+}
+
+.comment-item {
+    margin-top: 1rem;
+    border: 2px solid #EEE9E9;
+    padding: .5rem;
+}
+
+.comment-item-name {
+    font-family: $heading-font;
+    font-size: 1rem;
+    float: left;
+}
+
+.comment-item-date {
+    @extend .sec-list-date;
+    margin-left: 1rem;
+}
+
+.comment-item-content {
+    font-family: $body-font;
+    margin-top: .5rem;
+}
+
+/*---------------------------
     RELATED NEWS SECTION
 ---------------------------*/
 .sec-related-news {

@@ -292,7 +292,7 @@
                     <?php foreach($featuresData as $val): ?>
                         <div class="span-l-4 columns sec-home-features-list">
                             
-                            <a href="single_post.php?news=<?php echo $val['id']; ?>" class="sec-news-link">
+                            <a href="single.php?features_id=<?php echo $val['id']; ?>" class="sec-news-link">
                                 
                                 <img src="<?php echo $val['thumb']; ?>" alt="<?php echo $val['title']; ?>">
 
