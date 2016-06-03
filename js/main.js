@@ -1,6 +1,8 @@
 $(function(){
 
-    // audo player
+    /*---------------------------
+        Audio Player
+    ---------------------------*/
     var $jsPlayAudio = $('.js-play-audio');
     if ($jsPlayAudio.length > 0) {
         $('.js-play-audio').click(function(e){
@@ -28,7 +30,9 @@ $(function(){
     }
 
 
-    // video
+    /*---------------------------
+        Video
+    ---------------------------*/
     var $homeVideoTop = $('.js-home-video-top');
     if ($homeVideoTop.length > 0) {
         // adjust height of video list depending on hight of the top video
@@ -68,6 +72,34 @@ $(function(){
 
     }
 
+    /*---------------------------
+        Comments
+    ---------------------------*/
+    var $commentForm = $('.js-comment-form');
+    if ($commentForm.length > 0) {
+      $commentForm.submit(function(e) {
+        e.preventDefault();
+
+        var inputData = objectize($(this).serializeArray());
+        
+        $.ajax({
+          url: $(this).attr('action'),
+          type: 'post',
+          data: inputData,
+          success: function(res) {
+            res = JSON.parse(res);
+            $('.js-comments-lists').html(res.data.comment_lists);
+          },
+          error: function(err) {
+            console.log('Error!');
+          }
+        });
+
+
+      });
+
+    }
+
 
 
 
@@ -86,7 +118,6 @@ $(function(){
       return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-
     // Gallery fancybox
     // var fbox = $('.fbox');
 
@@ -102,5 +133,39 @@ $(function(){
     //     });
 
     // }
+    
+     function objectize(inputs, options) {
+
+        var self = this,
+            result = {};
+        
+        options = options || {};
+
+        _.each( inputs, function(input){
+
+            if ( options.escape ) {
+                input.value = self.escape( input.value );
+            }
+
+            if ( options.trim ) {
+                input.value = self.trim( input.value );
+            }
+
+            if ( input.name.indexOf(".") !== -1 ) {
+
+                input.name = input.name.split(".");
+
+                if ( result[input.name[0]] === undefined ) {
+                    result[input.name[0]] = {};
+                }
+
+                result[input.name[0]][input.name[1]] = input.value;
+
+            } else {
+                result[input.name] = input.value;
+            }
+        });
+        return result;
+    }
 
 });

@@ -31,6 +31,12 @@
         'no_page' => true
     ));
 
+    // grab comments data from dt_comments table
+    $commentsData = $db->select('dt_comments', '*', array(
+        'post_id' => $id,
+        'ORDER' => 'created_at DESC'
+    ));
+
 ?>
 
     <main class="page-main">
@@ -107,25 +113,35 @@
                                 <div class="holizontal-divider"></div>
 
                                 <!-- comment -->
-                                <form action="comment.php" method="post" accept-charset="utf-8" class="form span-l-6">
+                                <form action="comments.php" method="post" accept-charset="utf-8" class="form js-comment-form span-l-6">
 
                                     <div class="input-wrapper">
 
-                                        <label class="sec-single-label">name</label>
-                                        <input type="text" name="comment_name" value="" class="input">
+                                        <label class="sec-single-label">name*</label>
+                                        <input type="text" name="comment_name" value="" class="input" required>
 
                                     </div>
 
                                     <div class="input-wrapper">
 
-                                        <label class="sec-single-label">comment</label>
-                                        <textarea name="comment_content" class="input textarea"></textarea>
+                                        <label class="sec-single-label">comment*</label>
+                                        <textarea name="comment_content" class="input textarea" required></textarea>
 
                                     </div>
+
+                                    <input type="hidden" name="post_id" value="<?php echo $id; ?>">
 
                                     <input type="submit" name="submit" value="submit" class="btn">
 
                                 </form><!-- /comment -->
+
+                                <div class="comment-lists-wrapper">
+                                    
+                                    <ul class="comment-lists js-comments-lists">
+                                    <?php echo Utility::getCommentLists($commentsData);?>
+                                    </ul>
+
+                                </div>
                                 
                             </div>
 

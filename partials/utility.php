@@ -186,4 +186,19 @@ class Utility {
       return $uri;
     }
 
+    static function getCommentLists($data = array()) {
+        if (empty($data)) return '';
+        
+        $html = '';
+        foreach($data as $index => $val) {
+            $html .= '<li class="comment-item">';
+                $html .= '<h5 class="comment-item-name">'. $val['name'] .'</h5>';
+                $html .= '<span class="comment-item-date">'. self::datetimeToPostDate($val['created_at']) .'</span>';
+                $html .= '<p class="comment-item-content">'. $val['content'] .'</p>';
+            $html .= '</li>';
+        }
+                                        
+        return $html;         
+    }
+
 }
